@@ -10,6 +10,13 @@ Run the included Unix MicroPython build:
 ./bin/micropython -c "print('hello from micropython')"
 ```
 
+To execute the main program without physical hardware, use the provided stub
+implementations by setting `MICROPYPATH` to the `stubs` directory:
+
+```sh
+MICROPYPATH=stubs:lib ./bin/micropython src/main.py
+```
+
 ## Rebuilding
 
 To rebuild the binary (for example after updating the source or changing
