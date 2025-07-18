@@ -17,6 +17,10 @@ implementations by setting `MICROPYPATH` to the `stubs` directory:
 MICROPYPATH=stubs:lib ./bin/micropython src/main.py
 ```
 
+The `stubs` directory includes a lightweight `ina219` module which
+simulates voltage and current readings. Tests can update the stored
+measurements via `INA219.set_values()` when this path is used.
+
 ## Rebuilding
 
 To rebuild the binary (for example after updating the source or changing
