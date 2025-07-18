@@ -54,13 +54,18 @@ class SoftI2C:
 class ADC:
     ATTN_11DB = 0
 
-    def __init__(self, pin):
+    def __init__(self, pin, value=0):
         self.pin = pin
-        print(f"[stub] ADC({pin})")
+        self._value = value
+        print(f"[stub] ADC({pin}, value={value})")
 
     def atten(self, val):
         print(f"[stub] ADC.atten({val})")
 
+    def set_value(self, val):
+        """Set the value returned by :py:meth:`read_u16`."""
+        self._value = val
+
     def read_u16(self):
-        print("[stub] ADC.read_u16() -> 0")
-        return 0
+        print(f"[stub] ADC.read_u16() -> {self._value}")
+        return self._value
